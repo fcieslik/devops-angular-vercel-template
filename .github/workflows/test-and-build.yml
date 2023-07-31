@@ -20,7 +20,6 @@ jobs:
 
   audit:
     runs-on: ubuntu-latest
-    needs: [prettier]
 
     steps:
       - name: Checkout
@@ -34,7 +33,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    needs: [audit]
+    needs: [audit, prettier]
 
     steps:
       - name: Checkout
@@ -42,11 +41,11 @@ jobs:
       - name: Checkout and Setup Node
         uses: ./.github/actions/setup-node-install-npm
       - name: Run unit tests
-        run: npm test
+        run: npm test:headless
 
   test-cypress:
     runs-on: ubuntu-latest
-    needs: [audit]
+    needs: [audit, prettier]
 
     steps:
       - name: Checkout
@@ -58,7 +57,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    needs: [audit]
+    needs: [test, test-cypress]
 
     steps:
       - name: Checkout
