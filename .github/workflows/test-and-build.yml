@@ -46,7 +46,7 @@ jobs:
 
   test-cypress:
     runs-on: ubuntu-latest
-    needs: [ audit ]
+    needs: [audit]
 
     steps:
       - name: Checkout
