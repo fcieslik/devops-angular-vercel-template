@@ -54,7 +54,7 @@ jobs:
       - name: Checkout and Setup Node
         uses: ./.github/actions/setup-node-install-npm
       - name: Run cypress component tests
-        run: npm test:component
+        run: npm run test:component
 
   build:
     runs-on: ubuntu-latest
