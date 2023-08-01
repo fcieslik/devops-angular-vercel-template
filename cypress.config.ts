@@ -8,4 +8,12 @@ export default defineConfig({
     },
     specPattern: '**/*.cy.ts',
   },
+  port: 5173,
+  video: false,
+  experimentalModifyObstructiveThirdPartyCode: true,
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    }
+  }
 });
