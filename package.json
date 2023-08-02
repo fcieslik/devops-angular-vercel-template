@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test:ci": "ng test --watch=false --browsers MyHeadlessChrome",
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
     "test:ci:component": "cypress run --component",
     "cypress:open": "npx cypress open",
     "format:check": "prettier . --check --ignore-path .gitignore",
