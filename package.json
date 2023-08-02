@@ -8,9 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:ci": "ng test --watch=false --browsers MyHeadlessChrome",
-    "test:e2e": "concurrently --kill-others --success \"command-1\" \"npm:dev\" \"cypress run --e2e\"",
     "test:ci:component": "cypress run --component",
-    "test:both": "cypress run --component && npm run test:e2e",
     "cypress:open": "npx cypress open",
     "format:check": "prettier . --check --ignore-path .gitignore",
     "format:fix": "prettier . --write --ignore-path .gitignore"
